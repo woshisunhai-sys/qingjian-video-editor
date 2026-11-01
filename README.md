@@ -56,6 +56,6 @@ Android 1.5.0 test APK:
 ## 联系 / Contact
 
 个人开发者 / Independent developer  
-Qingjian · woshisunhai@gmail.com
+黄伟 / Wei Huang · Qingjian · woshisunhai@gmail.com
 
 欢迎通过本仓库 Issues 反馈复现步骤、系统版本和报错。请勿在公开问题中填写授权码、密码或私人媒体素材。
