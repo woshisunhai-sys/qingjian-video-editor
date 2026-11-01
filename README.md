@@ -1,6 +1,6 @@
 # 轻剪视频剪辑 · Qingjian Video Editor
 
-[官方网站 / Official website](https://jianji.aichuangju.com/) · [下载 Windows 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable.exe) · [Android APK 测试版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.0-Test.apk)
+[GitHub 版本下载 / Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [官方网站 / Official website](https://jianji.aichuangju.com/) · [下载 Windows 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable.exe) · [Android APK 测试版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.0-Test.apk)
 
 轻剪用于导入、裁剪和拼接本地视频，添加手动字幕与背景音乐，再合成为完整视频。此仓库用于发布软件安装包、使用说明和问题反馈。软件为专有授权产品。
 
@@ -22,7 +22,7 @@
 - 预览整片并导出；提供 720p / 1080p 选项，格式取决于设备编码器。
 - 默认跟随设备语言，支持手动切换十种语言：简体中文、繁体中文、英语、日语、韩语、西班牙语、法语、德语、俄语、越南语。
 
-![当前版本界面演示，合成示例素材](https://jianji.aichuangju.com/qingjian-license/press/qingjian-editor-zh.jpg)
+![当前版本界面演示，合成示例素材](assets/qingjian-editor-zh.jpg)
 
 ## 使用与授权
 
