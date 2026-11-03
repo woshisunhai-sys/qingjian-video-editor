@@ -1,6 +1,6 @@
 # 轻剪视频剪辑 · Qingjian Video Editor
 
-[GitHub 版本下载 / Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [官方网站 / Official website](https://jianji.aichuangju.com/) · [下载 Windows 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable.exe) · [Android APK 测试版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.0-Test.apk)
+[GitHub 版本下载 / Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [官方网站 / Official website](https://jianji.aichuangju.com/) · [下载 Windows 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.5.1-x64.exe) · [Android APK 测试版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.1-Test.apk)
 
 轻剪用于导入、裁剪和拼接本地视频，添加手动字幕与背景音乐，再合成为完整视频。此仓库用于发布软件安装包、使用说明和问题反馈。软件为专有授权产品。
 
@@ -8,10 +8,10 @@
 
 | 版本 | 平台 | 说明 |
 | --- | --- | --- |
-| Windows 1.5.0 | Windows 10 / 11 x64 | 单文件 EXE，免安装，双击即可运行 |
-| Android 1.5.0 | Android APK | 测试渠道；开发者已反馈实机使用正常 |
+| Windows 1.5.1 | Windows 10 / 11 x64 | 单文件 EXE，免安装，双击即可运行 |
+| Android 1.5.1 | Android APK | 测试渠道，APK |
 
-正式版本日期：2026-10-31。Windows 与 Android 的实机验证由开发者于 2026-11-02 反馈。
+版本日期：2026-11-03。1.5.1 将「购买授权」按钮移到套餐卡片下方，授权过期或输入无效码时也可打开官网购买区。
 
 ## 主要功能
 
@@ -37,7 +37,7 @@
 
 ## English
 
-Qingjian is a video editor for importing, trimming and joining local clips, adding timed manual subtitles and background music, and exporting a finished movie. The Windows edition is a portable single-file application for Windows 10/11 x64. An Android test APK is also available; the developer reports successful physical-device testing.
+Qingjian is a video editor for importing, trimming and joining local clips, adding timed manual subtitles and background music, and exporting a finished movie. The Windows edition is a portable single-file application for Windows 10/11 x64. An Android test APK is also available. In 1.5.1, the Buy License button appears below the plan cards and remains available after expiration or invalid activation.
 
 The interface follows your device language by default and supports ten languages. Video and audio are processed locally. Internet access is required for licensing. Export options include 720p and 1080p; output format availability depends on device encoders.
 
@@ -47,11 +47,11 @@ Subtitles are entered manually; speech recognition is not included. Export befor
 
 ## 校验 / SHA-256
 
-Windows portable 1.5.0 x64:
-`6e197fb19c5fa365fd74f8d2fb2ccf334072db65d454017d727de121572d6437`
+Windows portable 1.5.1 x64:
+`0fae439227043537e49e34d7013204b7060c7da8a1927d329188b9014e69659e`
 
-Android 1.5.0 test APK:
-`19d89367f06d397a9eaf34b83b0e652e1f31ba767e4e1dbce530ba4f5dcc7a6f`
+Android 1.5.1 test APK:
+`8185608862cd874f839bfbf8b6b68c44a03b268bac66edbf0bb2d3efe9fb311e`
 
 ## 联系 / Contact
 
