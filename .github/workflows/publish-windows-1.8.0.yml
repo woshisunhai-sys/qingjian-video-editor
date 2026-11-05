@@ -1,0 +1,60 @@
+name: Publish Qingjian Windows 1.8.0
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-windows-1.8.0.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Download and verify the public Windows release
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --connect-timeout 30 --max-time 900 'https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.8.0-x64.exe' --output Qingjian-Portable-1.8.0-x64.exe
+          printf '%s\n' 'a1c5f02d28399e49fd07b9ebab6c8dffb9096d17c09e2ec69166f1078a81e955  Qingjian-Portable-1.8.0-x64.exe' > SHA256SUMS.txt
+          sha256sum --check SHA256SUMS.txt
+          curl --fail --location --retry 3 'https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Windows-1.8.0-guide.txt' --output Qingjian-Windows-1.8.0-guide.txt
+      - name: Publish the verified Windows package
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > notes.md <<'NOTES'
+          ## Windows 1.8.0 · 2026-11-06
+          - Select a clip and choose Speed: 1.2x, 1.5x or 2x; choose 1x to reset.
+          - Original audio preserves pitch; captions, timeline duration and source-anchored volume keyframes follow the speed.
+          - Background music and independent voiceovers keep their original speed.
+          - Independent clip gain with 0 / -3 / -6 dB presets.
+          - Clip loudness normalization with a default -16 LUFS target.
+          - Dialogue loudness analysis using local voice activity detection.
+          - Default -1 dBTP limiting on the final mix, verified after encoding.
+          - Local volume keyframes and a tool to lower only a selected sentence.
+          - The added Earlier/Later timeline buttons have been removed.
+          - Local auto captions, SRT export, microphone recording, Windows text-to-speech, music and movie export remain included.
+
+          Quiet sources are boosted by at most 12 dB. Normalization resets gain offsets and keeps keyframes. Review speech captions and the audio result before publishing.
+
+          **Windows 10/11 x64, single-file portable edition.** The local speech model is bundled. Media stays on the computer; Internet is required for licensing. One 24-hour trial per device, then paid activation is required. Export before closing; project autosave is unavailable.
+
+          Android remains at 1.5.1. Download that unchanged APK from the [official website](https://jianji.aichuangju.com/#downloads) or the [1.5.1 release](https://github.com/woshisunhai-sys/qingjian-video-editor/releases/tag/v1.5.1).
+
+          Windows SHA-256: `a1c5f02d28399e49fd07b9ebab6c8dffb9096d17c09e2ec69166f1078a81e955`
+
+          [Official website and purchase options](https://jianji.aichuangju.com/)
+          NOTES
+          if ! gh release view v1.8.0 --repo woshisunhai-sys/qingjian-video-editor >/dev/null 2>&1; then
+            gh release create v1.8.0 --repo woshisunhai-sys/qingjian-video-editor --target "$GITHUB_SHA" --title 'Qingjian Windows 1.8.0 · Clip speed, audio controls and local auto captions' --notes-file notes.md
+          fi
+          gh release upload v1.8.0 Qingjian-Portable-1.8.0-x64.exe Qingjian-Windows-1.8.0-guide.txt SHA256SUMS.txt --repo woshisunhai-sys/qingjian-video-editor --clobber
+          gh release edit v1.8.0 --repo woshisunhai-sys/qingjian-video-editor --latest --notes-file notes.md
