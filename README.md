@@ -1,11 +1,14 @@
 # 轻剪视频剪辑 · Qingjian Video Editor
 
-[Windows 1.7.0 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.7.0-x64.exe) · [官方网站](https://jianji.aichuangju.com/) · [GitHub Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [使用说明](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Windows-1.7.0-guide.txt)
+[Windows 1.8.0 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.8.0-x64.exe) · [官方网站](https://jianji.aichuangju.com/) · [GitHub Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [使用说明](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Windows-1.8.0-guide.txt)
 
 轻剪用于导入、裁剪和拼接本地视频，添加字幕、背景音乐与配音，再合成为完整视频。本仓库发布公开安装包、说明和问题反馈，软件为专有授权产品。
 
-## Windows 1.7.0 · 2026-11-05
+## Windows 1.8.0 · 2026-11-06
 
+- 选中视频 →“变速”→ 1.2× / 1.5× / 2×，1× 恢复，每段可单独设置。
+- 原声同步变速并保持音调，字幕、片段时长和源时间音量关键帧同步调整。
+- 背景音乐和独立配音保持原速度。
 - 分镜独立音量，支持 0 / −3 / −6 dB 预设及自定义增益。
 - 一键统一所有分镜响度，默认目标约 −16 LUFS。
 - 对白模式先在本机检测语音片段，再分析与统一对白响度。
@@ -16,13 +19,15 @@
 
 统一后增益微调归零，关键帧保留。弱音最多提升 12 dB。音质、背景音乐与口音会影响自动字幕及对白分析，请试听并校对。
 
+![变速选项，本地演示使用测试素材](https://jianji.aichuangju.com/qingjian-license/press/qingjian-speed-1.8.0.png)
+
 ![音量面板，本地演示使用合成素材](https://jianji.aichuangju.com/qingjian-license/press/qingjian-audio-1.7.0.png)
 
 ## 下载
 
 | 版本 | 平台 | 说明 |
 | --- | --- | --- |
-| [Windows 1.7.0](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.7.0-x64.exe) | Windows 10 / 11 x64 | 单文件 EXE，免安装，内置语音模型 |
+| [Windows 1.8.0](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.8.0-x64.exe) | Windows 10 / 11 x64 | 单文件 EXE，免安装，内置语音模型 |
 | [Android 1.5.1](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.1-Test.apk) | Android APK | 本次没有更新安卓包，新增音量功能属于 Windows 版 |
 
 ## 使用与授权
@@ -38,17 +43,19 @@
 
 ## English
 
-Qingjian Windows 1.7.0 is a portable single-file video editor for 64-bit Windows 10/11. Import, split, trim and join local video clips, generate editable captions with a bundled local speech model, add manual subtitles or export SRT, record voiceovers, and use installed Windows text-to-speech voices.
+Qingjian Windows 1.8.0 is a portable single-file video editor for 64-bit Windows 10/11. Import, split, trim and join local video clips, generate editable captions with a bundled local speech model, add manual subtitles or export SRT, record voiceovers, and use installed Windows text-to-speech voices.
 
-The audio panel adds per-clip gain, loudness normalization with a default −16 LUFS target, dialogue analysis using local voice activity detection, volume keyframes and a range-duck tool. The final mix uses a default −1 dBTP ceiling and is measured again after encoding. Quiet-source boost is limited to 12 dB. Normalizing resets clip gain offsets and preserves keyframes. Review the audio and automatic captions before publishing.
+Per-clip speeds of 1.2x, 1.5x and 2x preserve original-audio pitch and retime captions, clip duration and source-anchored volume keyframes. Choose 1x to reset. Music and independent voiceovers retain their speed.
+
+The audio panel includes per-clip gain, loudness normalization with a default −16 LUFS target, dialogue analysis using local voice activity detection, volume keyframes and a range-duck tool. The final mix uses a default −1 dBTP ceiling and is measured again after encoding. Quiet-source boost is limited to 12 dB. Normalizing resets clip gain offsets and preserves keyframes. Review the audio and automatic captions before publishing.
 
 Ten UI languages follow device settings or can be selected manually. Media processing stays on the computer; licensing requires Internet access. The download is free with one 24-hour trial per device, then paid device-bound activation is required. Purchase options are on the official website. Export before closing because project autosave is unavailable. Android remains at 1.5.1 in this release.
 
 ## SHA-256
 
-Windows 1.7.0 x64, 378,050,026 bytes:
+Windows 1.8.0 x64, 378,051,718 bytes:
 
-`6f55a724a86204ceb1b3de5a417e68f1df59f80d4ce4b8d789c6869c2e11086f`
+`a1c5f02d28399e49fd07b9ebab6c8dffb9096d17c09e2ec69166f1078a81e955`
 
 Android 1.5.1 APK:
 
@@ -60,4 +67,3 @@ Android 1.5.1 APK:
 黄伟 / Wei Huang · Qingjian · woshisunhai@gmail.com
 
 欢迎通过 Issues 反馈复现步骤、系统版本和报错。请勿公开授权码、密码或私人素材。
-
