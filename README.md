@@ -1,56 +1,57 @@
 # 轻剪视频剪辑 · Qingjian Video Editor
 
-[GitHub 版本下载 / Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [官方网站 / Official website](https://jianji.aichuangju.com/) · [下载 Windows 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.5.1-x64.exe) · [Android APK 测试版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.1-Test.apk)
+[Windows 1.7.0 免安装版](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.7.0-x64.exe) · [官方网站](https://jianji.aichuangju.com/) · [GitHub Releases](https://github.com/woshisunhai-sys/qingjian-video-editor/releases) · [使用说明](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Windows-1.7.0-guide.txt)
 
-轻剪用于导入、裁剪和拼接本地视频，添加手动字幕与背景音乐，再合成为完整视频。此仓库用于发布软件安装包、使用说明和问题反馈。软件为专有授权产品。
+轻剪用于导入、裁剪和拼接本地视频，添加字幕、背景音乐与配音，再合成为完整视频。本仓库发布公开安装包、说明和问题反馈，软件为专有授权产品。
 
-## 下载 / Downloads
+## Windows 1.7.0 · 2026-11-05
+
+- 分镜独立音量，支持 0 / −3 / −6 dB 预设及自定义增益。
+- 一键统一所有分镜响度，默认目标约 −16 LUFS。
+- 对白模式先在本机检测语音片段，再分析与统一对白响度。
+- 最终混音默认限制到 −1 dBTP，编码完成后复测真峰值。
+- 局部音量关键帧与“只压低这一段”，可处理过响的句子。
+- 移除时间线上新增的“前移、后移”按钮，仍可拖动排序。
+- 保留本机自动字幕、手动字幕、SRT 导出、录音与系统文字配音。
+
+统一后增益微调归零，关键帧保留。弱音最多提升 12 dB。音质、背景音乐与口音会影响自动字幕及对白分析，请试听并校对。
+
+![音量面板，本地演示使用合成素材](https://jianji.aichuangju.com/qingjian-license/press/qingjian-audio-1.7.0.png)
+
+## 下载
 
 | 版本 | 平台 | 说明 |
 | --- | --- | --- |
-| Windows 1.5.1 | Windows 10 / 11 x64 | 单文件 EXE，免安装，双击即可运行 |
-| Android 1.5.1 | Android APK | 测试渠道，APK |
-
-版本日期：2026-11-03。1.5.1 将「购买授权」按钮移到套餐卡片下方，授权过期或输入无效码时也可打开官网购买区。
-
-## 主要功能
-
-- 添加多个本地视频，删除片段并调整顺序。
-- 为每段视频设置保留的起点和终点，播放、暂停和拖动时间线定位。
-- 手动输入字幕，编辑起止时间、文字样式和位置。
-- 添加背景音乐，调整背景音乐与原声的音量。
-- 预览整片并导出；提供 720p / 1080p 选项，格式取决于设备编码器。
-- 默认跟随设备语言，支持手动切换十种语言：简体中文、繁体中文、英语、日语、韩语、西班牙语、法语、德语、俄语、越南语。
-
-![当前版本界面演示，合成示例素材](assets/qingjian-editor-zh.jpg)
+| [Windows 1.7.0](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Portable-1.7.0-x64.exe) | Windows 10 / 11 x64 | 单文件 EXE，免安装，内置语音模型 |
+| [Android 1.5.1](https://jianji.aichuangju.com/qingjian-license/download/Qingjian-Android-1.5.1-Test.apk) | Android APK | 本次没有更新安卓包，新增音量功能属于 Windows 版 |
 
 ## 使用与授权
 
 1. 打开软件，领取本设备一次 24 小时免费试用，或输入购买的授权码。
-2. 导入视频，裁剪各片段并调整顺序。
-3. 按需添加手动字幕和背景音乐，预览后导出成片。
-4. 关闭前请先导出；当前版本没有项目自动保存。
+2. 导入视频，在播放头处分割、裁头、裁尾或删除多余片段，拖动排序。
+3. 生成或编辑字幕，添加配音和音乐，按需调整分镜音量与关键帧。
+4. 预览并导出，提供 720p / 1080p 选项，格式取决于设备编码支持。
 
-下载免费，试用结束后需付费授权。7 天 3 元、30 天 5 元、365 天 30 元（人民币）。从首次激活开始计时，授权码绑定单台设备。购买入口见官网。
+支持十种界面语言，默认跟随设备。视频、音乐、语音识别及音频分析在本机处理。激活、授权验证及导出授权检查需要联网。
 
-视频、音乐和字幕在本地处理。激活、授权验证及导出授权检查需要联网。字幕为手动编辑，不含语音识别。Windows 程序当前未使用商业代码签名证书。本次发布不包含 Mac 正式版或原生 iOS 安装包。
+下载免费，试用后需付费授权，购买链接、币种和各期限价格以官网对应渠道为准。一个授权码绑定一台设备，期限从首次激活开始。当前没有工程自动保存，退出前请导出保存。Windows 当前没有商业代码签名证书。
 
 ## English
 
-Qingjian is a video editor for importing, trimming and joining local clips, adding timed manual subtitles and background music, and exporting a finished movie. The Windows edition is a portable single-file application for Windows 10/11 x64. An Android test APK is also available. In 1.5.1, the Buy License button appears below the plan cards and remains available after expiration or invalid activation.
+Qingjian Windows 1.7.0 is a portable single-file video editor for 64-bit Windows 10/11. Import, split, trim and join local video clips, generate editable captions with a bundled local speech model, add manual subtitles or export SRT, record voiceovers, and use installed Windows text-to-speech voices.
 
-The interface follows your device language by default and supports ten languages. Video and audio are processed locally. Internet access is required for licensing. Export options include 720p and 1080p; output format availability depends on device encoders.
+The audio panel adds per-clip gain, loudness normalization with a default −16 LUFS target, dialogue analysis using local voice activity detection, volume keyframes and a range-duck tool. The final mix uses a default −1 dBTP ceiling and is measured again after encoding. Quiet-source boost is limited to 12 dB. Normalizing resets clip gain offsets and preserves keyframes. Review the audio and automatic captions before publishing.
 
-The download is free with one 24-hour trial per device. Paid activation is required afterward: 7 days CNY 3, 30 days CNY 5, or 365 days CNY 30. Codes bind to one device and start on first activation. Purchase options are available on the official website.
+Ten UI languages follow device settings or can be selected manually. Media processing stays on the computer; licensing requires Internet access. The download is free with one 24-hour trial per device, then paid device-bound activation is required. Purchase options are on the official website. Export before closing because project autosave is unavailable. Android remains at 1.5.1 in this release.
 
-Subtitles are entered manually; speech recognition is not included. Export before closing, as project autosave is not available. The Windows executable currently has no commercial code-signing certificate. Screenshots show the current editor using synthetic media in a local demonstration environment.
+## SHA-256
 
-## 校验 / SHA-256
+Windows 1.7.0 x64, 378,050,026 bytes:
 
-Windows portable 1.5.1 x64:
-`0fae439227043537e49e34d7013204b7060c7da8a1927d329188b9014e69659e`
+`6f55a724a86204ceb1b3de5a417e68f1df59f80d4ce4b8d789c6869c2e11086f`
 
-Android 1.5.1 test APK:
+Android 1.5.1 APK:
+
 `8185608862cd874f839bfbf8b6b68c44a03b268bac66edbf0bb2d3efe9fb311e`
 
 ## 联系 / Contact
@@ -58,4 +59,5 @@ Android 1.5.1 test APK:
 个人开发者 / Independent developer  
 黄伟 / Wei Huang · Qingjian · woshisunhai@gmail.com
 
-欢迎通过本仓库 Issues 反馈复现步骤、系统版本和报错。请勿在公开问题中填写授权码、密码或私人媒体素材。
+欢迎通过 Issues 反馈复现步骤、系统版本和报错。请勿公开授权码、密码或私人素材。
+
