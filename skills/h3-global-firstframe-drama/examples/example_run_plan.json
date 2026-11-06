@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "EP_DEMO_001",
+  "config": {
+    "image_model": "gpt-image-2",
+    "video_model": "MiniMax-H3",
+    "video_mode": "I2VA",
+    "allow_fl2va_fallback": false,
+    "max_video_retries": 1,
+    "skip_failed_shots": true,
+    "max_parallel_video_jobs": 3
+  },
+  "scenes": [
+    {
+      "id": "livingroom",
+      "scene_reference_image": "assets/scenes/livingroom.png",
+      "character_reference_images": {
+        "male": [
+          "assets/characters/male-front.png",
+          "assets/characters/male-side.png"
+        ],
+        "female": [
+          "assets/characters/female-front.png"
+        ]
+      },
+      "prop_reference_images": {
+        "sofa": [
+          "assets/props/sofa.png"
+        ]
+      }
+    }
+  ],
+  "global_states": [
+    {
+      "id": "livingroom_v1",
+      "scene_id": "livingroom",
+      "parent_state_id": null,
+      "change_reason": "initial: male at door; female seated on sofa",
+      "editor_layout": {
+        "coordinate_system": "normalized-2d-0-to-1",
+        "room": {
+          "door_wall": "north",
+          "sofa_wall": "west"
+        },
+        "characters": {
+          "male": {
+            "xy": [
+              0.8,
+              0.25
+            ],
+            "facing": "toward sofa",
+            "pose": "standing"
+          },
+          "female": {
+            "xy": [
+              0.25,
+              0.65
+            ],
+            "facing": "toward door",
+            "pose": "seated"
+          }
+        },
+        "props": {
+          "sofa": {
+            "xy": [
+              0.2,
+              0.7
+            ],
+            "state": "unchanged"
+          }
+        }
+      },
+      "global_reference_image": null,
+      "status": "planned"
+    },
+    {
+      "id": "livingroom_v2",
+      "scene_id": "livingroom",
+      "parent_state_id": "livingroom_v1",
+      "change_reason": "male moves to sofa and remains beside female",
+      "editor_layout": {
+        "coordinate_system": "normalized-2d-0-to-1",
+        "room": {
+          "door_wall": "north",
+          "sofa_wall": "west"
+        },
+        "characters": {
+          "male": {
+            "xy": [
+              0.42,
+              0.6
+            ],
+            "facing": "toward female",
+            "pose": "standing"
+          },
+          "female": {
+            "xy": [
+              0.25,
+              0.65
+            ],
+            "facing": "toward male",
+            "pose": "seated"
+          }
+        },
+        "props": {
+          "sofa": {
+            "xy": [
+              0.2,
+              0.7
+            ],
+            "state": "unchanged"
+          }
+        }
+      },
+      "global_reference_image": null,
+      "status": "planned"
+    }
+  ],
+  "shots": [
+    {
+      "id": "s001",
+      "source_shot_id": "original-shot-001",
+      "scene_id": "livingroom",
+      "global_state_in": "livingroom_v1",
+      "global_state_out": "livingroom_v1",
+      "generation_duration_seconds": 5,
+      "target_cut_seconds": 2.5,
+      "camera": "male medium closeup, door behind him",
+      "start_state": "male stands by door",
+      "main_action": "Male asks a short question and stays near the doorway",
+      "end_state": "male remains by door",
+      "first_frame_prompt": "Create ONE first frame for s001 directly from livingroom_v1, with male medium closeup, door behind him. Show start state only: male stands by door. No per-shot position guide.",
+      "h3_prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Begin from the provided first frame. Male asks a short question and stays near the doorway. End with: male remains by door. On-screen spoken dialogue by male: \"你真的决定了吗？\"; only male lip sync.\n\noverall_soundscape: Quiet indoor ambience, light movement sound. Do not invent dialogue.\n\nnon_diegetic_music: none",
+      "first_frame_image": null,
+      "video_file": null,
+      "video_mode": "I2VA",
+      "dependencies": [
+        "global:livingroom_v1"
+      ],
+      "retry_count": 0,
+      "status": "planned"
+    },
+    {
+      "id": "s002",
+      "source_shot_id": "original-shot-002",
+      "scene_id": "livingroom",
+      "global_state_in": "livingroom_v1",
+      "global_state_out": "livingroom_v1",
+      "generation_duration_seconds": 5,
+      "target_cut_seconds": 2.5,
+      "camera": "female closeup, correct reverse background",
+      "start_state": "female remains seated on sofa",
+      "main_action": "Female briefly looks up and replies",
+      "end_state": "female remains seated",
+      "first_frame_prompt": "Create ONE first frame for s002 directly from livingroom_v1, with female closeup, correct reverse background. Show start state only: female remains seated on sofa. No per-shot position guide.",
+      "h3_prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Begin from the provided first frame. Female briefly looks up and replies. End with: female remains seated. On-screen spoken dialogue by female: \"我已经想好了。\"; only female lip sync.\n\noverall_soundscape: Quiet indoor ambience, light movement sound. Do not invent dialogue.\n\nnon_diegetic_music: none",
+      "first_frame_image": null,
+      "video_file": null,
+      "video_mode": "I2VA",
+      "dependencies": [
+        "global:livingroom_v1"
+      ],
+      "retry_count": 0,
+      "status": "planned"
+    },
+    {
+      "id": "s003",
+      "source_shot_id": "original-shot-003",
+      "scene_id": "livingroom",
+      "global_state_in": "livingroom_v1",
+      "global_state_out": "livingroom_v2",
+      "generation_duration_seconds": 5,
+      "target_cut_seconds": 3,
+      "camera": "wide shot showing path from door to sofa",
+      "start_state": "male starts at door",
+      "main_action": "Male walks from the door to the sofa and stops beside her",
+      "end_state": "male stands beside seated female",
+      "first_frame_prompt": "Create ONE first frame for s003 directly from livingroom_v1, with wide shot showing path from door to sofa. Show start state only: male starts at door. No per-shot position guide.",
+      "h3_prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Begin from the provided first frame. Male walks from the door to the sofa and stops beside her. End with: male stands beside seated female. No dialogue, no voice-over.\n\noverall_soundscape: Quiet indoor ambience, light movement sound. Do not invent dialogue.\n\nnon_diegetic_music: none",
+      "first_frame_image": null,
+      "video_file": null,
+      "video_mode": "I2VA",
+      "dependencies": [
+        "global:livingroom_v1"
+      ],
+      "retry_count": 1,
+      "status": "skipped",
+      "failure_reason": "DEMO ONLY: first-frame image task repeatedly failed; skip this shot. No media was actually generated.",
+      "continuity_warning": "Critical v1→v2 movement is missing. Next shot uses planned v2, but editor must resolve this transition in edit."
+    },
+    {
+      "id": "s004",
+      "source_shot_id": "original-shot-004",
+      "scene_id": "livingroom",
+      "global_state_in": "livingroom_v2",
+      "global_state_out": "livingroom_v2",
+      "generation_duration_seconds": 5,
+      "target_cut_seconds": 2,
+      "camera": "two-shot of both characters beside sofa",
+      "start_state": "male is already by sofa, female seated",
+      "main_action": "Male looks down; female looks up",
+      "end_state": "positions unchanged",
+      "first_frame_prompt": "Create ONE first frame for s004 directly from livingroom_v2, with two-shot of both characters beside sofa. Show start state only: male is already by sofa, female seated. No per-shot position guide.",
+      "h3_prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description: [Shot 1] Begin from the provided first frame. Male looks down; female looks up. End with: positions unchanged. No dialogue, no voice-over.\n\noverall_soundscape: Quiet indoor ambience, light movement sound. Do not invent dialogue.\n\nnon_diegetic_music: none",
+      "first_frame_image": null,
+      "video_file": null,
+      "video_mode": "I2VA",
+      "dependencies": [
+        "global:livingroom_v2"
+      ],
+      "retry_count": 0,
+      "status": "planned"
+    }
+  ]
+}
